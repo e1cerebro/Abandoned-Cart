@@ -100,4 +100,32 @@ class Chris_Abandoned_Cart_Reminder_Admin {
 
 	}
 
+	/* This function is used to create all the necessary admin pages 
+	
+	
+	*/
+	public function acr_admin_menus(){
+
+		$page_title = 'Abandoned Cart Reminder';
+		$menu_title = 'Abandoned Cart';
+		$capability = 'manage_options';
+		$menu_slug  = 'abandoned-cart-reminder';
+		$function   = array($this,'acr_abandoned_cart_reminder_homepage');
+		$icon_url   = 'dashicons-cart';
+		$position   = 4;
+	  
+		add_menu_page( $page_title,
+					   $menu_title, 
+					   $capability, 
+					   $menu_slug, 
+					   $function, 
+					   $icon_url, 
+					   $position );
+	  }
+
+
+
+	  public function acr_abandoned_cart_reminder_homepage(){
+		  echo "Hello";
+	  }
 }
